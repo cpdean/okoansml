@@ -26,5 +26,5 @@ let basicsuite =
     "fib7">:: fib7;
     "fib8">:: fib8;
     "fib9">:: fib9;
-    "fib10">:: fib10
+    "fib10">:: fib10;
 ]

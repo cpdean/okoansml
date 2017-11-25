@@ -9,10 +9,12 @@ let test2 test_ctxt = assert_equal 100 (identity 100)
 
 (* Name the test cases and group them together *)
 let suite =
-"just make sure things work">:::
+"koans">:::
  ["test1">:: test1;
   "test2">:: test2;
-  Testbasic.basicsuite]
+  Testbasic.basicsuite;
+  Testalphabetcipher.suite;
+ ]
 
 let _ =
   run_test_tt_main suite
