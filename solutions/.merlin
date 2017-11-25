@@ -1,0 +1,4 @@
+B ../_build/default/solutions
+FLG -open Solutions -w -40
+PKG bytes
+PKG re

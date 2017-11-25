@@ -1,0 +1,10 @@
+B ../_build/default/solutions
+B ../_build/default/tests
+FLG -w -40 -open Tests -w -40
+PKG bytes
+PKG oUnit
+PKG oUnit.advanced
+PKG re
+PKG unix
+S .
+S ../solutions

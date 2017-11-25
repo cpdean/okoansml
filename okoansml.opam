@@ -1,0 +1,22 @@
+opam-version: "1.2"
+name: "okoansml"
+version: "0.0.1"
+maintainer: "Conrad Dean <conrad.p.dean@gmail.com>"
+authors: [
+    "Conrad Dean <conrad.p.dean@gmail.com>"
+]
+license: "BSD"
+homepage: "https://github.com/cpdean/okoansml"
+doc: "https://github.com/cpdean/okoansml"
+bug-reports: "https://github.com/cpdean/okoansml"
+dev-repo: "git://github.com/cpdean/okoansml.git"
+tags: [ "reason" "example" ]
+build: [
+  ["jbuilder" "build" "-p" name "-j" jobs]
+]
+depends: [
+  "jbuilder" {build}
+  "reason"  {= "3.0.0"}
+  "re"
+]
+available: [ ocaml-version >= "4.04" & ocaml-version < "4.05" ]
