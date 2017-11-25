@@ -78,14 +78,13 @@ To decode, the person would use the secret keyword and do the opposite.
 (* Name the test cases and group them together *)
 let identity x = x
 let assert_string_equal = assert_equal ~printer: identity
-let suite =
-"alphabet cipher">::: [
-        (* feel free to write your own tests to help development
-         * after `make test` you can run specific tests by copying
-         * and pasting their test path or the beginning of a test suite's path
-         * like this:
-         * ./_build/default/tests/test.exe -only-test "koans:3:alphabet cipher:0:utilities"
-         * *)
+let suite = "alphabet cipher">::: [
+    (* feel free to write your own tests to help development
+     * after `make test` you can run specific tests by copying
+     * and pasting their test path or the beginning of a test suite's path
+     * like this:
+     * ./_build/default/tests/test.exe -only-test "koans:3:alphabet cipher:0:utilities"
+     *)
     "utilities">::: [
         "example">:: (fun c ->
             assert_equal ~printer:string_of_int
@@ -98,29 +97,29 @@ let suite =
     "encoding with vigilance">:: ( fun c ->
         assert_string_equal
         ~msg: "can encode given a secret keyword"
-            "hmkbxebpxpmyllyrxiiqtoltfgzzv"
-            (encode "vigilance" "meetmeontuesdayeveningatseven")
+        "hmkbxebpxpmyllyrxiiqtoltfgzzv"
+        (encode "vigilance" "meetmeontuesdayeveningatseven")
     );
 
     "encoding with scones">:: ( fun c ->
         assert_string_equal
         ~msg: "can encode given a secret keyword"
         "egsgqwtahuiljgs"
-           (encode "scones" "meetmebythetree")
+        (encode "scones" "meetmebythetree")
     );
 
     "decoding with vigilance">:: ( fun c ->
         assert_string_equal
         ~msg: "can decode given a secret keyword"
-            "meetmeontuesdayeveningatseven"
-            (decode "vigilance" "hmkbxebpxpmyllyrxiiqtoltfgzzv")
+        "meetmeontuesdayeveningatseven"
+        (decode "vigilance" "hmkbxebpxpmyllyrxiiqtoltfgzzv")
     );
 
     "decoding with scones">:: ( fun c ->
         assert_string_equal
         ~msg: "can decode given a secret keyword"
-            "meetmebythetree"
-            (decode "scones" "egsgqwtahuiljgs")
+        "meetmebythetree"
+        (decode "scones" "egsgqwtahuiljgs")
     );
 
     "decipher the keyword vigilance">:: ( fun c ->
@@ -136,5 +135,4 @@ let suite =
         "scones"
         (decipher "hcqxqqtqljmlzhwiivgbsapaiwcenmyu" "packmyboxwithfivedozenliquorjugs")
     );
-
 ]
