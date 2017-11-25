@@ -77,6 +77,7 @@ To decode, the person would use the secret keyword and do the opposite.
 
 (* Name the test cases and group them together *)
 let identity x = x
+let assert_string_equal = assert_equal ~printer: identity
 let suite =
 "alphabet cipher">::: [
         (* feel free to write your own tests to help development
@@ -95,49 +96,43 @@ let suite =
     ];
 
     "encoding with vigilance">:: ( fun c ->
-        assert_equal
+        assert_string_equal
         ~msg: "can encode given a secret keyword"
-        ~printer:identity
             "hmkbxebpxpmyllyrxiiqtoltfgzzv"
             (encode "vigilance" "meetmeontuesdayeveningatseven")
     );
 
     "encoding with scones">:: ( fun c ->
-        assert_equal
+        assert_string_equal
         ~msg: "can encode given a secret keyword"
-        ~printer:identity
         "egsgqwtahuiljgs"
            (encode "scones" "meetmebythetree")
     );
 
     "decoding with vigilance">:: ( fun c ->
-        assert_equal
+        assert_string_equal
         ~msg: "can decode given a secret keyword"
-        ~printer:identity
             "meetmeontuesdayeveningatseven"
             (decode "vigilance" "hmkbxebpxpmyllyrxiiqtoltfgzzv")
     );
 
     "decoding with scones">:: ( fun c ->
-        assert_equal
+        assert_string_equal
         ~msg: "can decode given a secret keyword"
-        ~printer:identity
             "meetmebythetree"
             (decode "scones" "egsgqwtahuiljgs")
     );
 
     "decipher the keyword vigilance">:: ( fun c ->
-        assert_equal
+        assert_string_equal
         ~msg: "can decipher the encrypted and decrypted text to find the keyword"
-        ~printer:identity
         "vigilance"
         (decipher "opkyfipmfmwcvqoklyhxywgeecpvhelzg" "thequickbrownfoxjumpsoveralazydog")
     );
 
     "decipher the keyword scones">:: ( fun c ->
-        assert_equal
+        assert_string_equal
         ~msg: "can decipher the encrypted and decrypted text to find the keyword"
-        ~printer:identity
         "scones"
         (decipher "hcqxqqtqljmlzhwiivgbsapaiwcenmyu" "packmyboxwithfivedozenliquorjugs")
     );
