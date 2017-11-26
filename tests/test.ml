@@ -10,8 +10,9 @@ let suite =
   Testdoublets.suite;
   Testmagicnumber.suite;
   Testfoxgoosecorn.suite;
-*)
   Testsumgrid.suite;
+*)
+  Testcardgamewar.suite;
  ]
 
 let _ =
