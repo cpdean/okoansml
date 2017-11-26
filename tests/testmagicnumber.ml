@@ -9,10 +9,11 @@ open OUnit
 open Solutions.Magicnumber
 
 (* i have no idea how to do what is a simple oneliner in python *)
-let rec char_list_of_string s = match s with
+let rec char_list_of_string s =
+    let open String in
+    match s with
     | "" -> []
-    | s -> (String.get s 0) :: (char_list_of_string (String.sub s 1
-    (String.length s - 1)))
+    | s -> (get s 0) :: (char_list_of_string (sub s 1 (length s - 1)))
 
 module DigitChar = struct
     type t = char
