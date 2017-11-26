@@ -11,8 +11,9 @@ let suite =
   Testmagicnumber.suite;
   Testfoxgoosecorn.suite;
   Testsumgrid.suite;
-*)
   Testcardgamewar.suite;
+*)
+  Testmazesolver.suite;
  ]
 
 let _ =
