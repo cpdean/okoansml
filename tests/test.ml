@@ -9,8 +9,9 @@ let suite =
   Testalphabetcipher.suite;
   Testdoublets.suite;
   Testmagicnumber.suite;
-*)
   Testfoxgoosecorn.suite;
+*)
+  Testsumgrid.suite;
  ]
 
 let _ =
