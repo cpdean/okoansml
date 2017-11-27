@@ -60,29 +60,12 @@ open OUnit
 open Solutions.Doublets
 
 let identity x = x
-let rec join j xs = match xs with
-    | [] -> ""
-    | [alone] -> alone
-    | [a; b] -> a ^ j ^ b
-    | x :: tail -> x ^ j ^ (join j tail)
 
-let show_str_list xs = "[" ^ (join "; " xs) ^ "]"
+let show_str_list xs = "[" ^ (String.concat "; " xs) ^ "]"
 
 let assert_string_equal = assert_equal ~printer: identity
 let suite = "doublets">:::
     ("utilities">::: [
-        "join1">:: (fun c ->
-            assert_equal
-            "a, b" (join ", " ["a"; "b"])
-        );
-        "join2">:: (fun c ->
-            assert_equal
-            "a" (join ", " ["a"])
-        );
-        "join3">:: (fun c ->
-            assert_equal
-            "" (join ", " [])
-        );
         "show string">:: (fun c ->
             assert_equal
             ~printer:identity
