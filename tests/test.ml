@@ -4,7 +4,6 @@ open Solutions
 let suite =
 "koans">:::
  [
-(*
   Testbasic.basicsuite;
   Testalphabetcipher.suite;
   Testdoublets.suite;
@@ -13,7 +12,6 @@ let suite =
   Testsumgrid.suite;
   Testcardgamewar.suite;
   Testmazesolver.suite;
-*)
   Testbowlinggame.suite;
  ]
 
